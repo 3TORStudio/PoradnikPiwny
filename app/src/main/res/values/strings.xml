@@ -4,6 +4,8 @@
     <string name="brands">tu pojawi się propozycja piwa</string>
     <string-array name="beer_color">
         <item>jasne</item>
+        <item>bursztynowe</item>
+        <item>brązowe</item>
         <item>ciemne</item>
     </string-array>
 </resources>
