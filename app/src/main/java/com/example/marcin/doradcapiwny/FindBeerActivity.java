@@ -27,7 +27,7 @@ public class FindBeerActivity extends AppCompatActivity {
         //pobranie jednego wpisu z listy piwa
         String rodzajPiwa = String.valueOf(listaPiwa.getSelectedItem());
         //-------------------------------------------------------------------
-
+        //To olejemy
         if (!czyKlikniete){
             tekstZListaPiwa.setText("Na razie nie wiem co zaproponować");
             czyKlikniete = true;
@@ -35,7 +35,7 @@ public class FindBeerActivity extends AppCompatActivity {
             tekstZListaPiwa.setText("Daj spokój. Nic nie powiem.\nNo dobra: " + rodzajPiwa +
                 " najlepsze będzie zimne...");
         }
-
+        //
 
 
 
