@@ -7,9 +7,14 @@ import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class FindBeerActivity extends AppCompatActivity {
 
-    private boolean czyKlikniete = false;
+    //private boolean czyKlikniete = false;
+
+    private BeerExpert expert = new BeerExpert();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,17 +32,16 @@ public class FindBeerActivity extends AppCompatActivity {
         //pobranie jednego wpisu z listy piwa
         String rodzajPiwa = String.valueOf(listaPiwa.getSelectedItem());
         //-------------------------------------------------------------------
-        //To olejemy
-        if (!czyKlikniete){
-            tekstZListaPiwa.setText("Na razie nie wiem co zaproponować");
-            czyKlikniete = true;
-        } else {
-            tekstZListaPiwa.setText("Daj spokój. Nic nie powiem.\nNo dobra: " + rodzajPiwa +
-                " najlepsze będzie zimne...");
+
+       //pobranie listy piw
+        List<String> brandList = expert.getBrands(rodzajPiwa);
+       // obiekt do tworzenia tekstów
+        StringBuffer brandsFormatted = new StringBuffer();
+
+        for (String pifko: brandList){
+            brandsFormatted.append(pifko).append('\n');
         }
-        //
 
-
-
+        tekstZListaPiwa.setText(brandsFormatted);
     }
 }
